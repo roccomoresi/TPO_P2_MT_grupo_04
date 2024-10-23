@@ -1,5 +1,6 @@
 package org.example.tdas;
 
+
 public class MatrizOfStacks implements QueueOfStacks{
     //DEFINO EL FINAL DE LA COLA.
     private static final int MAX = 20;
