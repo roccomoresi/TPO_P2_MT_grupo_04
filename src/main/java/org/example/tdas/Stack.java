@@ -1,8 +1,8 @@
-package org.example.strucutures;
+package org.example.tdas;
 
 public interface Stack {
     int getTop();
     void remove();
-    void add(int a);
     boolean isEmpty();
+    void add(int value);
 }
