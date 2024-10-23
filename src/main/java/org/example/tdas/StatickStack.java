@@ -3,7 +3,7 @@ package org.example.tdas;
 
 public class StatickStack implements Stack{
 
-    private final static int MAX = 50;
+    private final static int MAX = 20;
     private final int[] array;
     private int count;
 

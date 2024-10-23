@@ -2,7 +2,7 @@ package org.example.tdas;
 
 public class MatrizOfStacks implements QueueOfStacks{
     //DEFINO EL FINAL DE LA COLA.
-    private static final int MAX = 50;
+    private static final int MAX = 20;
     private final StatickStack[] array;
     private int count;
 
@@ -61,6 +61,22 @@ public class MatrizOfStacks implements QueueOfStacks{
                 }
             }
         }
+    }
+
+    //Calcular traza
+
+    public int calcularTraza(MatrizOfStacks matrizOfStacks){
+
+        int suma = 0;
+
+        for (int i = 0 ; i < matrizOfStacks.getArray().length ; i++) {
+            for (int j = matrizOfStacks.getArray()[0].getArray().length - 1; j > matrizOfStacks.getArray()[i].getArray().length; j--) {
+                suma+=matrizOfStacks.getArray()[i].getArray()[j];
+            }
+
+
+        }
+        return suma;
     }
 
 
