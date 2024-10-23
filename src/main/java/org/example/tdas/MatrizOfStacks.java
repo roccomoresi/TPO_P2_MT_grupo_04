@@ -47,64 +47,32 @@ public class MatrizOfStacks implements QueueOfStacks{
         return this.count == 0;
     }
 
-    public void imprimirQueue(){
+    public void imprimirQueue(MatrizOfStacks matrizOfStacks) {
 
-        if(this.isEmpty()){
+        if (this.isEmpty()) {
             System.out.println("Esta vacia la cola");
-        }
-        for(int i = 1;i <= this.count;i++){
-            System.out.print(this.array[i] + "-");
+        } else {
+            for (int i = 0; i < matrizOfStacks.getArray().length; i++) {
+
+                System.out.println("");
+
+                for (int j = 0; j < matrizOfStacks.getArray()[0].getArray().length; j++) {
+                    System.out.print(j + "-");
+                }
+            }
         }
     }
-
-
-
-    //Calcular traza
 
 
     public StatickStack[] getArray() {
         return array;
     }
 
-    public int calcularTraza(MatrizOfStacks queueOfStacks, StatickStack pila1) {
-
-
-        int suma = 0;
-
-
-        StatickStack[] cola = queueOfStacks.getArray();
-        StatickStack stack = queueOfStacks.getArray()[0];
-
-        int lenCola = cola.getArray()[0].length;
-        int lenStack = pila1.getArray().length;
-
-        int contador = lenStack;
-
-        if (cola.getArray().length == 0) {
-            throw new RuntimeException("La matriz esta vacia");
-        }
-
-        if (lenCola != lenStack) {
-            throw new RuntimeException("No es cuadrada la matriz.");
-        } else {
-            for(int i = 0;i < cola.getArray().length;i++){
-                for(int j = 0; j < pila1.getArray().length;j++){
-                    suma+=pila1.getArray()[contador];
-
-                }
-                contador-=1;
-            }
-
-        }
-
-        return suma;
 
 
 
-        //1) Averiguamos si la matriz es cuadrada.
 
 
-    }
 }
 
 
