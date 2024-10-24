@@ -1,4 +1,5 @@
 package org.example.tdas;
+import org.example.tdas.StatickStack;
 
 public interface QueueOfStacks {
     StatickStack getFirst();
