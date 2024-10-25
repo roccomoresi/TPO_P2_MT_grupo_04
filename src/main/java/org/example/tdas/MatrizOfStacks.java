@@ -13,6 +13,8 @@ public class MatrizOfStacks implements QueueOfStacks{
         this.count = 0;
     }
 
+
+
     //Obtengo el primero de la cola (El primero q entro) FILA(First in first out)
     @Override
     public StatickStack getFirst() {
@@ -64,22 +66,65 @@ public class MatrizOfStacks implements QueueOfStacks{
         }
     }
 
+
+
+
+
+
+    public StatickQueue crearColaDePilasVacia() {
+        // Crear una nueva instancia de StaticQueue
+        StatickQueue colaDePilas = new StatickQueue();
+
+        // Crear una nueva pila vacía para cada posición de la cola (20x20)
+        for (int i = 0; i < 20; i++) {
+            for (int j = 0; j < 20; j++) {
+                // Crear una pila vacía (StaticStack)
+                StatickStack pilaVacia = new StatickStack();
+
+                // Agregar la pila vacía a la cola
+                colaDePilas.add(pilaVacia);
+            }
+        }
+
+        return colaDePilas;
+    }
+
     //Calcular traza
 
-    public int calcularTraza(MatrizOfStacks matrizOfStacks){
+    public int calcularTraza(MatrizOfStacks matrizOfStacks) {
 
         int suma = 0;
+        int n = matrizOfStacks.getArray().length; // Asumiendo que es cuadrada (n x n)
 
-        for (int i = 0 ; i < matrizOfStacks.getArray().length ; i++) {
-            for (int j = matrizOfStacks.getArray()[0].getArray().length - 1; j > matrizOfStacks.getArray()[i].getArray().length; j--) {
-                suma+=matrizOfStacks.getArray()[i].getArray()[j];
-            }
-
-
+        // Recorremos la matriz desde la esquina superior derecha a la inferior izquierda
+        for (int i = 0; i < n; i++) {
+            // Tomamos el elemento de la posición (i, n-i-1) para hacer la traza en este sentido
+            suma += matrizOfStacks.getArray()[i].getArray()[n - i - 1];
         }
+
         return suma;
     }
 
+    public darVueltaLaMatriz(MatrizOfStacks matrizOfStacks, MatrizOfStacks matrizOfStacksAUX){
+
+        for (int i = 0; i < matrizOfStacks.getArray()[0].getArray().length; i++) {
+            matrizOfStacksAUX.add();
+        }
+
+        for (int i = 0; i < matrizOfStacks.getArray()[0].getArray().length; i++) {
+
+        }
+
+    }
+
+    public int traspuesta(MatrizOfStacks matriz, StatickQueue queue, StatickStack aux1, StatickStack aux2){
+        for (int i = 0; i < matriz.getArray()[0].getArray().length; i++) {
+
+            int auxNum = matriz.getArray()[0].getArray()[i];
+            return auxNum;
+        }
+
+    return 0;}
 
     public StatickStack[] getArray() {
         return array;
