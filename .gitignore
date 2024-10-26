@@ -58,3 +58,5 @@ build/
 .gradle/configuration-cache/
 .gradle/buildOutputCleanup/
 *.gradle
+
+/new/.idea
