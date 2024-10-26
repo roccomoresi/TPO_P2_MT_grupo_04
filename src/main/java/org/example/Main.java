@@ -37,10 +37,9 @@ public class Main {
         System.out.println("Cola después de remover el primero:");
         queueOfStacks.imprimirQueue(queueOfStacks);
 
+        queueOfStacks.calcularTraza(queueOfStacks);
 
-        int resu = queueOfStacks.calcularTraza(queueOfStacks);
-        System.out.println();
-        System.out.println("Suma de la traza: " + resu);
+
     }
 
     }

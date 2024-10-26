@@ -67,30 +67,6 @@ public class MatrizOfStacks implements QueueOfStacks{
     }
 
 
-
-
-
-
-    public StatickQueue crearColaDePilasVacia() {
-        // Crear una nueva instancia de StaticQueue
-        StatickQueue colaDePilas = new StatickQueue();
-
-        // Crear una nueva pila vacía para cada posición de la cola (20x20)
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                // Crear una pila vacía (StaticStack)
-                StatickStack pilaVacia = new StatickStack();
-
-                // Agregar la pila vacía a la cola
-                colaDePilas.add(pilaVacia);
-            }
-        }
-
-        return colaDePilas;
-    }
-
-    //Calcular traza
-
     public int calcularTraza(MatrizOfStacks matrizOfStacks) {
 
         int suma = 0;
@@ -105,15 +81,9 @@ public class MatrizOfStacks implements QueueOfStacks{
         return suma;
     }
 
-    public darVueltaLaMatriz(MatrizOfStacks matrizOfStacks, MatrizOfStacks matrizOfStacksAUX){
 
-        for (int i = 0; i < matrizOfStacks.getArray()[0].getArray().length; i++) {
-            matrizOfStacksAUX.add();
-        }
 
-        for (int i = 0; i < matrizOfStacks.getArray()[0].getArray().length; i++) {
-
-        }
+    public void darVueltaLaMatriz(MatrizOfStacks matrizOfStacks, MatrizOfStacks matrizOfStacksAUX){
 
     }
 
