@@ -15,7 +15,7 @@ public class StatickStack implements Stack{
 
 
     //PASAR UNA PILA A OTRA
-    public void pasarPilaAOtra(StatickStack pila1, StatickStack pila2){
+    public void pasarPilaAOtra(Stack pila1, Stack pila2){
 
         while(!pila1.isEmpty()){
             int aux = pila1.getTop();
@@ -27,7 +27,7 @@ public class StatickStack implements Stack{
     }
 
     //HACER UNA COPIA
-    public void copy(StatickStack stack1, StatickStack copy, StatickStack aux){
+    public void copy(Stack stack1, Stack copy, Stack aux){
 
         while(!stack1.isEmpty()){
             int num = stack1.getTop();

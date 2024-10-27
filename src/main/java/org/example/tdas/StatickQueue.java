@@ -14,7 +14,7 @@ public class StatickQueue implements Queue{
 
 
     //Invertir sin pila auxiliar
-    public StatickQueue invertirColaSinPila(StatickQueue queue){
+    public Queue invertirColaSinPila(StatickQueue queue){
         int[] arrayCola = queue.getArray();
         StatickQueue colaInvertida = new StatickQueue();
         for(int i = arrayCola[arrayCola.length-1];i >= arrayCola[0];i--){
