@@ -1,14 +1,14 @@
 package org.example.tdas;
 
 
-public class MatrizOfStacks implements QueueOfStacks{
+public class QueueStacks implements QueueOfStacks{
     //DEFINO EL FINAL DE LA COLA.
     private static final int MAX = 20;
     private final Stack[] array;
     private int count;
 
     //CONSTRUCTOR
-    public MatrizOfStacks() {
+    public QueueStacks() {
         this.array = new Stack[MAX];
         this.count = 0;
     }
@@ -55,12 +55,6 @@ public class MatrizOfStacks implements QueueOfStacks{
     public Stack[] getArray() {
         return array;
     }
-
-
-
-
-
-
 }
 
 

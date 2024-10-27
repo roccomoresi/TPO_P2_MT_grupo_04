@@ -27,8 +27,8 @@ public class StatickColaUtil {
         System.out.println("");
 
         System.out.println("Cola invertida");
-        StatickQueue colainv = cola1.invertirColaSinPila(cola1);
-        colainv.print(colainv);
+        /*StatickQueue colainv = cola1.invertirColaSinPila(cola1);
+        colainv.print(colainv);*/
 
 
 

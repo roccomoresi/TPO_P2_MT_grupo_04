@@ -1,14 +1,12 @@
 package org.example;
 
-import org.example.tdas.MatrizOfStacks;
+import org.example.tdas.QueueStacks;
 import org.example.tdas.StatickStack;
-
-import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
-        MatrizOfStacks queueOfStacks = new MatrizOfStacks();
+        QueueStacks queueOfStacks = new QueueStacks();
 
 
         StatickStack stack1 = new StatickStack();
@@ -34,10 +32,7 @@ public class Main {
         queueOfStacks.add(stack4);
         
 
-        System.out.println("Cola después de remover el primero:");
-        queueOfStacks.imprimirQueue(queueOfStacks);
-
-        queueOfStacks.calcularTraza(queueOfStacks);
+        stack1.printStack(stack1.getArray());
 
 
     }

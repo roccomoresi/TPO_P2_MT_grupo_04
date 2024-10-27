@@ -1,6 +1,6 @@
-/*package org.example.utils;
+package org.example.utils;
 
-import org.example.tdas.MatrizOfStacks;
+import org.example.tdas.QueueStacks;
 import org.example.tdas.StatickStack;
 
 public class matrizDeStacksUtil {
@@ -9,14 +9,12 @@ public class matrizDeStacksUtil {
 
 
 
-        MatrizOfStacks cola = new MatrizOfStacks();
+        QueueStacks cola = new QueueStacks();
 
         StatickStack pila1 = new StatickStack();
         StatickStack pila2 = new StatickStack();
         StatickStack pila3 = new StatickStack();
         StatickStack pila4 = new StatickStack();
-
-
 
         for (int i = 1; i <= 20; i++) {
             pila1.add(i);
@@ -24,8 +22,6 @@ public class matrizDeStacksUtil {
             pila3.add(i);
             pila4.add(i);
         }
-
-
 
         pila1.printStack(pila1.getArray());
         System.out.println();
@@ -40,22 +36,19 @@ public class matrizDeStacksUtil {
         cola.add(pila3);
         cola.add(pila4);
 
-        StatickStack[] colaArray = cola.getArray();
-        int colaTamaño = cola.getArray().length;
-        int pilaTamaño = colaArray[0].getArray().length;
+        System.out.println("");
+        System.out.println(cola.getFirst().getTop());
+        int cont = 0;
+        while(!cola.getFirst().isEmpty()){
+            cola.getFirst().getTop();
+            cont+=1;
+            cola.getFirst().remove();
+        }
 
+        System.out.println(cont);
 
-
-        int g = cola.calcularTraza(cola, pila1,cola);
-        System.out.println();
-        System.out.println(g);
-
-
-
-
+        while(!cola.isEmpty()){
+            
+        }
     }
-
-
-
-
-}*/
+}
