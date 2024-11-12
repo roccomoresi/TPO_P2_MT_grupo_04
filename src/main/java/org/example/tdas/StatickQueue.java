@@ -2,7 +2,7 @@ package org.example.tdas;
 
 public class StatickQueue implements Queue{
     private final int MAX = 20;
-    private final int[] array;
+    public final int[] array;
     int count;
 
 
@@ -109,5 +109,9 @@ public class StatickQueue implements Queue{
 
     public int[] getArray() {
         return array;
+    }
+
+    public int getMAX() {
+        return MAX;
     }
 }

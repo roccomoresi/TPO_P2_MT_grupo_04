@@ -3,31 +3,44 @@ package org.example.tdas;
 public class StatickQueueOfQueues implements QueueOfQueues {
         private final int MAX = 20;
         private final Queue[] array;
-        int count;
-
+        private int count;
 
         public StatickQueueOfQueues() {
             this.array = new Queue[MAX];
             this.count = 0;
         }
 
+        @Override
+        public QueueOfQueues concatenate(QueueOfQueues instaciasQueueOfQueues, int n){
 
+            QueueOfQueues t = new StatickQueueOfQueues();
 
-        //Invertir sin pila auxiliar
-        public Queue invertirColaSinPila(org.example.tdas.StatickQueue queue){
-            int[] arrayCola = queue.getArray();
-            org.example.tdas.StatickQueue colaInvertida = new org.example.tdas.StatickQueue();
-            for(int i = arrayCola[arrayCola.length-1];i >= arrayCola[0];i--){
-                colaInvertida.add(arrayCola[i]);
+            for(int h = 0; h < n; h++){
+                Queue aux = new StatickQueue();
+                t.add(aux);
             }
-            return colaInvertida;
+
+
+
+            for(int i = 0; i < n; i++){
+                Queue f = instaciasQueueOfQueues.getFirst();
+                while(!f.isEmpty()){
+                    int auxNum = f.getFirst();
+                    t.getFirst().add(auxNum);
+                    f.remove();
+
+                }
+                instaciasQueueOfQueues.remove();
+            }
+            return t;
 
         }
+
 
         @Override
         public Queue getFirst() {
             if(isEmpty()){
-                throw new RuntimeException("Esta vacio breooooo");
+                throw new RuntimeException("Esta vacia la cola principal.");
             }
             else{
                 return array[0];
@@ -38,7 +51,7 @@ public class StatickQueueOfQueues implements QueueOfQueues {
         public void remove() {
 
             if(isEmpty()){
-                throw new RuntimeException("Esta breoooo");
+                throw new RuntimeException("Esta vacia la cola principal adiosñjasdjioñ.");
             }
             for(int i = 0;i < array.length - 1;i++){
                 this.array[i] = this.array[i + 1];
@@ -63,10 +76,7 @@ public class StatickQueueOfQueues implements QueueOfQueues {
             return false;
         }
 
-
-        public void print(org.example.tdas.StatickQueue cola1){
-            for(int i = 0;i < cola1.getArray().length;i++){
-                System.out.print(cola1.getArray()[i] + " ");
-            }
-        }
+    public Queue[] getArray() {
+        return array;
+    }
 }

@@ -5,4 +5,5 @@ public interface QueueOfQueues {
     void remove();
     void add(Queue queue);
     boolean isEmpty();
+    QueueOfQueues concatenate(QueueOfQueues queue, int n);
 }
