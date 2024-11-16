@@ -68,6 +68,7 @@ public class StatickQueueOfQueues implements QueueOfQueues {
 
     @Override
     public boolean isEmpty() {
-        return count == 0;  
+        return count == 0;
     }
+
 }

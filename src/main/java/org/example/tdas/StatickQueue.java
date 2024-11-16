@@ -73,5 +73,28 @@ public class StatickQueue implements Queue{
             cola1.remove();
         }
     }
+
+
+    @Override
+    public Queue flat() {
+        // Crear una nueva cola vacía
+        Queue result = new StatickQueue();
+
+        // Iterar sobre todas las colas en la QueueOfQueue (array de colas)
+        for (int i = 0; i < count; i++) {
+            Queue currentQueue = array[i];  // Obtener la cola en la posición i
+
+            // Mientras la cola no esté vacía, transferir los elementos a la cola resultante
+            while (!currentQueue.isEmpty()) {
+                int element = currentQueue.getFirst();  // Obtener el primer elemento de la cola
+                result.add(element);  // Agregar el elemento a la cola resultante
+                currentQueue.remove();  // Eliminar el primer elemento de la cola original
+            }
+        }
+
+        return result;  // Devolver la cola con todos los elementos concatenados
+    }
+
+
 }
 
