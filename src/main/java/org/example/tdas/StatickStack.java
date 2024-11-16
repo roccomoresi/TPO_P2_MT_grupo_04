@@ -43,40 +43,6 @@ public class StatickStack implements Stack{
 
     }
 
-    //Obtener la cantidad de numeros en la pila.
-    public void lengthPila(StatickStack pila){
-        System.out.println(pila.getArray().length);
-    }
-
-    //Sumar elementos de una pila
-    public int sumarNumerosPila(StatickStack pila){
-        int[] arrayPila = pila.getArray();
-        int suma = 0;
-        for(int i = 0;i < arrayPila.length;i++){
-            suma+=arrayPila[i];
-        }
-        return suma;
-    }
-
-    //Calcular promedio
-    public int calcularPromedio(int[] array){
-        int suma = 0;
-        int promedio = 0;
-        for(int i = 0;i<array.length;i++){
-            suma+=array[i];
-            promedio = suma / array.length;
-        }
-        return promedio;
-    }
-
-    public void printStack(int[] array){
-        for(int i = 0;i < array.length;i++){
-                System.out.print(array[i] + "");
-        }
-    }
-
-
-
     @Override
     public int getTop() {
 
@@ -115,15 +81,4 @@ public class StatickStack implements Stack{
     }
     }
 
-    public int[] getArray() {
-        return array;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
 }

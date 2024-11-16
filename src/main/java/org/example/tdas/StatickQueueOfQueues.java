@@ -1,82 +1,73 @@
 package org.example.tdas;
 
 public class StatickQueueOfQueues implements QueueOfQueues {
-        private final int MAX = 20;
-        private final Queue[] array;
-        private int count;
-
-        public StatickQueueOfQueues() {
-            this.array = new Queue[MAX];
-            this.count = 0;
-        }
-
-        @Override
-        public QueueOfQueues concatenate(QueueOfQueues instaciasQueueOfQueues, int n){
-
-            QueueOfQueues t = new StatickQueueOfQueues();
-
-            for(int h = 0; h < n; h++){
-                Queue aux = new StatickQueue();
-                t.add(aux);
-            }
+    private final int MAX = 20;
+    private final Queue[] array;
+    private int count;
 
 
+    public StatickQueueOfQueues() {
+        this.array = new Queue[MAX];
+        this.count = 0;
+    }
 
-            for(int i = 0; i < n; i++){
-                Queue f = instaciasQueueOfQueues.getFirst();
-                while(!f.isEmpty()){
-                    int auxNum = f.getFirst();
-                    t.getFirst().add(auxNum);
-                    f.remove();
+    @Override
+    public QueueOfQueues concatenate(QueueOfQueues instanciasQueueOfQueues, int n) {
+        QueueOfQueues t = new StatickQueueOfQueues();
 
-                }
-                instaciasQueueOfQueues.remove();
-            }
-            return t;
 
+        for (int h = 0; h < n; h++) {
+            Queue aux = new StatickQueue();
+            t.add(aux);
         }
 
 
-        @Override
-        public Queue getFirst() {
-            if(isEmpty()){
-                throw new RuntimeException("Esta vacia la cola principal.");
+        for (int i = 0; i < n; i++) {
+            Queue f = instanciasQueueOfQueues.getFirst();
+            while (!f.isEmpty()) {
+                int auxNum = f.getFirst();
+                t.getFirst().add(auxNum);
+                f.remove();
             }
-            else{
-                return array[0];
-            }
+            instanciasQueueOfQueues.remove();
+        }
+        return t;
+    }
+
+    @Override
+    public Queue getFirst() {
+        if (isEmpty()) {
+            throw new RuntimeException("La cola principal está vacía.");
+        } else {
+            return array[0];
+        }
+    }
+
+    @Override
+    public void remove() {
+        if (isEmpty()) {
+            throw new RuntimeException("La cola principal está vacía.");
         }
 
-        @Override
-        public void remove() {
-
-            if(isEmpty()){
-                throw new RuntimeException("Esta vacia la cola principal adiosñjasdjioñ.");
-            }
-            for(int i = 0;i < array.length - 1;i++){
-                this.array[i] = this.array[i + 1];
-            }
-            count--;
+        for (int i = 0; i < array.length - 1; i++) {
+            this.array[i] = this.array[i + 1];
         }
+        count--;
+    }
 
-        @Override
-        public void add(Queue queue) {
-            if(this.count == MAX){
-                throw new RuntimeException("La cola esta llena...");
-            }
-            this.array[this.count] = queue;
-            this.count++;
+
+    @Override
+    public void add(Queue queue) {
+        if (this.count == MAX) {
+            throw new RuntimeException("La cola está llena.");
         }
+        this.array[this.count] = queue;
+        this.count++;
+    }
 
-        @Override
-        public boolean isEmpty() {
-            if(count == 0){
-                return true;
-            }
-            return false;
-        }
 
-    public Queue[] getArray() {
-        return array;
+    @Override
+    public boolean isEmpty() {
+        return count == 0;  
     }
 }

@@ -11,24 +11,6 @@ public class StatickQueue implements Queue{
         this.count = 0;
     }
 
-
-
-    //Invertir sin pila auxiliar
-    public Queue invertirColaSinPila(StatickQueue queue){
-        int[] arrayCola = queue.getArray();
-        StatickQueue colaInvertida = new StatickQueue();
-        for(int i = arrayCola[arrayCola.length-1];i >= arrayCola[0];i--){
-            colaInvertida.add(arrayCola[i]);
-        }
-        return colaInvertida;
-
-    }
-
-    //cola de stacks
-    public void addStacks(){}
-
-
-
     //Invertir con pila auxiliar
     public void invertirCola(StatickQueue cola, StatickStack pila){
 
@@ -44,15 +26,6 @@ public class StatickQueue implements Queue{
         }
     }
 
-    public boolean definirSiCoincidenFinPrinc(StatickQueue cola1, StatickQueue cola2){
-        int[] array1 = cola1.getArray();
-        int[] array2 = cola2.getArray();
-
-        if (array1[0] == 0) {
-            return true;
-        }
-        return false;
-    }
 
     @Override
     public int getFirst() {
@@ -94,24 +67,11 @@ public class StatickQueue implements Queue{
     }
 
 
-    public void print(StatickQueue cola1){
-        for(int i = 0;i < cola1.getArray().length;i++){
-            System.out.print(cola1.getArray()[i] + " ");
-        }
-    }
-
-    public void pasarColaAOtra(StatickQueue cola1, StatickQueue cola2){
-        while(!cola1.isEmpty()){
+    public void pasarColaAOtra(StatickQueue cola1, StatickQueue cola2) {
+        while (!cola1.isEmpty()) {
             cola2.add(cola1.getFirst());
             cola1.remove();
         }
     }
-
-    public int[] getArray() {
-        return array;
-    }
-
-    public int getMAX() {
-        return MAX;
-    }
 }
+

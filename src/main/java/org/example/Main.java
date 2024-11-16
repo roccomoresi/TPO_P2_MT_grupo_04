@@ -1,12 +1,12 @@
 package org.example;
 
-import org.example.tdas.QueueStacks;
+import org.example.tdas.StatickQueueOfStacks;
 import org.example.tdas.StatickStack;
 
 public class Main {
     public static void main(String[] args) {
 
-        QueueStacks queueOfStacks = new QueueStacks();
+        StatickQueueOfStacks queueOfStacks = new StatickQueueOfStacks();
 
 
         StatickStack stack1 = new StatickStack();
