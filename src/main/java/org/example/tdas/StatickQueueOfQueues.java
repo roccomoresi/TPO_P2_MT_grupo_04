@@ -35,6 +35,25 @@ public class StatickQueueOfQueues implements QueueOfQueues {
     }
 
     @Override
+    public Queue flat(QueueOfQueues queueOfQueues) {
+        Queue result = new StatickQueue();
+
+        while (!queueOfQueues.isEmpty()) {
+
+            Queue currentQueue = queueOfQueues.getFirst();
+            while (!currentQueue.isEmpty()) {
+                int element = currentQueue.getFirst();
+
+
+                result.add(element);
+                currentQueue.remove();
+            }
+            queueOfQueues.remove();
+        }
+        return result;
+    }
+
+    @Override
     public Queue getFirst() {
         if (isEmpty()) {
             throw new RuntimeException("La cola principal está vacía.");
@@ -66,9 +85,42 @@ public class StatickQueueOfQueues implements QueueOfQueues {
     }
 
 
-    @Override
-    public boolean isEmpty() {
-        return count == 0;
+    public void reverseWithDepth(StatickQueueOfQueues queueOfQueues) {
+        if (queueOfQueues.isEmpty()) {
+            return; // Si está vacía, no hacemos nada
+        }
+
+        StatickQueueOfQueues tempQueueOfQueues = new StatickQueueOfQueues();
+        StatickQueue queueAux = new StatickQueue();
+
+        // Paso 1: Transferir colas de `queueOfQueues` a `tempQueueOfQueues` invirtiendo cada una
+        while (!queueOfQueues.isEmpty()) {
+            Queue currentQueue = queueOfQueues.getFirst();
+            queueOfQueues.remove();
+
+            // Invertir la cola actual
+            while (!currentQueue.isEmpty()) {
+                queueAux.add(currentQueue.getFirst());
+                currentQueue.remove();
+            }
+            while (!queueAux.isEmpty()) {
+                currentQueue.add(queueAux.getFirst());
+                queueAux.remove();
+            }
+
+            // Añadir la cola invertida al principio de `tempQueueOfQueues`
+            tempQueueOfQueues.add(currentQueue);
+        }
+
+        // Paso 2: Reconstruir `queueOfQueues` desde `tempQueueOfQueues` (ya está en orden invertido)
+        while (!tempQueueOfQueues.isEmpty()) {
+            queueOfQueues.add(tempQueueOfQueues.getFirst());
+            tempQueueOfQueues.remove();
+        }
     }
 
+    @Override
+        public boolean isEmpty() {
+        return count == 0;
+    }
 }
