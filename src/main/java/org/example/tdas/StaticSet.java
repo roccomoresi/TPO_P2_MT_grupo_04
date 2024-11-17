@@ -15,6 +15,47 @@ public class StaticSet implements Set {
         this.random = new Random();
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public static class Builder {
+        private final int[] array;
+        private int count;
+        private final Random random;
+
+        public Builder() {
+            this.array = new int[MAX];
+            this.count = 0;
+            this.random = new Random();
+        }
+
+        public Builder add(int value) {
+            if (count < MAX) {
+                for (int i = 0; i < count; i++) {
+                    if (array[i] == value) {
+                        return this; // Evitar duplicados
+                    }
+                }
+                array[count++] = value;
+            } else {
+                throw new RuntimeException("El conjunto está lleno.");
+            }
+            return this;
+        }
+
+        public Builder addAll(StaticSet otherSet) {
+            for (int i = 0; i < otherSet.count; i++) {
+                this.add(otherSet.array[i]);
+            }
+            return this;
+        }
+
+        public StaticSet build() {
+            return new StaticSet();
+        }
+    }
+
     @Override
     public void add(int a) {
         for(int i = 0; i < this.count; i++) {
