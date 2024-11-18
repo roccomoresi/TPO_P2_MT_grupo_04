@@ -1,8 +1,10 @@
+//modificacion de el TDA DynamicStack
+
 package org.example.tdas;
 
 import org.example.tdas.Nodes.Node;
 
-public class DynamicStack implements Stack {
+public class DynamicLimitedStack implements Stack {
 
     private Node first;
 
@@ -10,7 +12,7 @@ public class DynamicStack implements Stack {
     private int size; // Tamaño actual de la pila
 
     // Constructor: recibe la capacidad máxima como parámetro
-    public DynamicStack(int capacity) {
+    public DynamicLimitedStack(int capacity) {
         if (capacity <= 0) {
             throw new IllegalArgumentException("La capacidad debe ser mayor que 0");
         }

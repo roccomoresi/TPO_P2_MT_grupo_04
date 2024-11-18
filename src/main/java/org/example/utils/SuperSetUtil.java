@@ -1,11 +1,13 @@
-package org.example.tdas;
+package org.example.utils;
+import org.example.tdas.DynamicSet;
 import org.example.tdas.Nodes.Node;
+import org.example.tdas.Set;
 
-    public class SuperSet {
+public class SuperSetUtil {
 
         private final DynamicSet universalSet;
 
-        public SuperSet() {
+        public SuperSetUtil() {
             this.universalSet = new DynamicSet();
         }
 
