@@ -4,13 +4,13 @@ public class StatickQueue implements Queue {
     private final int MAX = 20;
     public final int[] array;
     private int count;
-    
+
     public StatickQueue() {
         this.array = new int[MAX];
         this.count = 0;
     }
 
-    public StatickQueue(int[] values) {
+    public StatickQueue(int... values) {
         this.array = new int[MAX];
         this.count = 0;
 
@@ -22,6 +22,7 @@ public class StatickQueue implements Queue {
             }
         }
     }
+
 
     public void invertirCola(StatickQueue cola, StatickStack pila) {
         while (count != 0) {
