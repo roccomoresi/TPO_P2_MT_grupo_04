@@ -15,6 +15,8 @@ public class StaticSet implements Set {
         this.random = new Random();
     }
 
+
+    
     @Override
     public void add(int a) {
         for(int i = 0; i < this.count; i++) {
