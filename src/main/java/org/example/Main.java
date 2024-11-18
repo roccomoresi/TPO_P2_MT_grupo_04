@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.tdas.DynamicStack;
 import org.example.tdas.StaticDictionary;
 import org.example.utils.StatickDictionaryUtil;
 

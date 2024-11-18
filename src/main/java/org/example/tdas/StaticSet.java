@@ -2,7 +2,7 @@ package org.example.tdas;
 
 import java.util.Random;
 
-//holaa
+
 
 public class StaticSet implements Set {
 
