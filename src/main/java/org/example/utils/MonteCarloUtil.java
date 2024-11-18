@@ -17,7 +17,7 @@ public class MonteCarloUtil {
                 coordenada.getY() >= 0 && coordenada.getY() <= lado) {
             this.coordenadas.add(coordenada);
         }
-    }
+    } // Complejidad O(1)
 
     public double aproximarPi() {
         int dentroDelCirculo = 0;
@@ -34,5 +34,5 @@ public class MonteCarloUtil {
         }
 
         return 4.0 * dentroDelCirculo / coordenadas.size();
-    }
+    } // Complejidad O(n), donde n es el tamaño de la lista coordenadas
 }
