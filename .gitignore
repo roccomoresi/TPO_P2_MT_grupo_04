@@ -1,62 +1,32 @@
-# Archivos de compilación
-*.class
-*.jar
-*.war
-*.ear
-
-# Directorios de compilación
-/bin/
-/build/
-/out/
-
-# Configuraciones de IntelliJ IDEA
-.idea/
-*.iml
+### IntelliJ IDEA ###
+#.idea/modules.xml
+#.idea/jarRepositories.xml
+#.idea/compiler.xml
+#.idea/libraries/
 *.iws
+*.iml
+*.ipr
 
-# Cache de IntelliJ
-.idea/*
-.idea/modules.xml
-.idea/*.iml
-.idea/workspace.xml
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Configuraciones de entorno y artefactos de compilación específicos de IntelliJ
-.idea/gradle.xml
-.idea/libraries
-.idea/tasks.xml
-.idea/dictionaries
-.idea/inspectionProfiles
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
 
-# Logs y archivos de sistema
-*.log
-/.idea_modules/
-/.idea_sandbox/
-/.idea/artifacts/
 
-# Configuración de VS Code
+### VS Code ###
 .vscode/
 
-# Sistema
+### Mac OS ###
 .DS_Store
-Thumbs.db
-
-# Herramientas de construcción
-# Maven
-target/
-*.mvn/
-dependency-reduced-pom.xml
-release.properties
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-
-# Gradle
-.gradle/
-build/
-.gradle/cache/
-.gradle/configuration-cache/
-.gradle/buildOutputCleanup/
-*.gradle
-
-/new/.idea
