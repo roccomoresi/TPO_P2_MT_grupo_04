@@ -2,7 +2,7 @@ package org.example.utils;
 
 import org.example.tdas.StaticDictionary;
 
-public class StatickDictionaryUtil {
+public class StaticDictionaryUtil {
 
     // Inicializar el diccionario con las letras del alfabeto y frecuencia 0
     public static void inicializarDiccionario(StaticDictionary diccionario) {

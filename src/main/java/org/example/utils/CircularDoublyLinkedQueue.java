@@ -1,6 +1,6 @@
 package org.example.utils;
 
-import org.example.tdas.DoublyNode;
+import org.example.tdas.Nodes.DoublyNode;
 import org.example.tdas.Queue;
 
 public class CircularDoublyLinkedQueue implements Queue {

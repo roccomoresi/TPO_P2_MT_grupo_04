@@ -107,6 +107,11 @@ public class DynamicSet implements Set {
         return this.first == null;
     }
 
+    @Override
+    public void addAll(Set other) {
+
+    }
+
     //nuevo metodo para poder recorrer el conjunto
     public Node getFirstNode() {
         return this.first;

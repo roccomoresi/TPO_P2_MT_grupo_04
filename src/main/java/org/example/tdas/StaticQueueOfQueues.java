@@ -1,19 +1,19 @@
 package org.example.tdas;
 
-public class StatickQueueOfQueues implements QueueOfQueues {
+public class StaticQueueOfQueues implements QueueOfQueues {
     private final int MAX = 20;
     private final Queue[] array;
     private int count;
 
 
-    public StatickQueueOfQueues() {
+    public StaticQueueOfQueues() {
         this.array = new Queue[MAX];
         this.count = 0;
     }
 
     @Override
     public QueueOfQueues concatenate(QueueOfQueues instanciasQueueOfQueues, int n) {
-        QueueOfQueues t = new StatickQueueOfQueues();
+        QueueOfQueues t = new StaticQueueOfQueues();
 
 
         for (int h = 0; h < n; h++) {
@@ -84,13 +84,13 @@ public class StatickQueueOfQueues implements QueueOfQueues {
         this.count++;
     }
 
-
-    public void reverseWithDepth(StatickQueueOfQueues queueOfQueues) {
+    @Override
+    public void reverseWithDepth(StaticQueueOfQueues queueOfQueues) {
         if (queueOfQueues.isEmpty()) {
             return; // Si está vacía, no hacemos nada
         }
 
-        StatickQueueOfQueues tempQueueOfQueues = new StatickQueueOfQueues();
+        StaticQueueOfQueues tempQueueOfQueues = new StaticQueueOfQueues();
         StatickQueue queueAux = new StatickQueue();
 
         // Paso 1: Transferir colas de `queueOfQueues` a `tempQueueOfQueues` invirtiendo cada una

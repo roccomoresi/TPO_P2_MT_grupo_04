@@ -7,5 +7,5 @@ public interface QueueOfQueues {
     boolean isEmpty();
     QueueOfQueues concatenate(QueueOfQueues queue, int n);
     Queue  flat(QueueOfQueues queueOfQueues);
-    void reverseWithDepth(StatickQueueOfQueues queueOfQueues);
+    void reverseWithDepth(StaticQueueOfQueues queueOfQueues);
 }

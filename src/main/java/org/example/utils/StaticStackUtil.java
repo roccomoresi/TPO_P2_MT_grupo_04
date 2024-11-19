@@ -1,8 +1,7 @@
 package org.example.utils;
-import org.example.tdas.Stack;
 import org.example.tdas.StatickStack;
 
-public class StatickStackUtil {
+public class StaticStackUtil {
 
     public static void invertirStack(StatickStack stack) {
         StatickStack auxiliar = new StatickStack();

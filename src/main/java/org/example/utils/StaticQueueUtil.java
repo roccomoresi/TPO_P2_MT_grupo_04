@@ -2,7 +2,7 @@ package org.example.utils;
 
 import org.example.tdas.StatickStack;
 
-public class StatickQueueUtil {
+public class StaticQueueUtil {
 
     public static StatickStack generarPilaOrdenadaSinRepetidos(StatickStack pilaOriginal) {
         StatickStack pilaAuxiliar = new StatickStack(); // Pila para ordenar elementos temporalmente

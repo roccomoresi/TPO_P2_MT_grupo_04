@@ -1,4 +1,4 @@
-package org.example.tdas;
+package org.example.tdas.Nodes;
 
 public class DoublyNode {
     private int value;
